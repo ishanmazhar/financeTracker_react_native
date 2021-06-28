@@ -24,7 +24,6 @@ const mapDispatchToProps = dispatch => {
 const AddTransaction = (props) => {
   const [text, setText] = useState('');
   const [amount, setAmount] = useState('');
-  let addTrx = false;
 
   useEffect(() => {
     props.fetchAccounts();
@@ -42,6 +41,8 @@ const AddTransaction = (props) => {
       }
 
       props.addTransaction(newTransaction);
+      setText('');
+      setAmount('');
     }
   }
 
@@ -61,13 +62,17 @@ const AddTransaction = (props) => {
 
   const submitAccount = e => {
     e.preventDefault();
-    if (text === '' || amount === '') {
-      alert("Please Fill in Both Feilds!")
-    } else {
-      props.saveAccount(props.transactions, total, income, expense);
-      setText('');
-      setAmount('');
-    }
+    // if (text === '' || amount === '') {
+    //   alert("Please Fill in Both Feilds!");
+    // } else {
+    //   props.saveAccount(props.transactions, total, income, expense);
+    //   setText('');
+    //   setAmount('');
+    // }
+    props.saveAccount(props.transactions, total, income, expense);
+    setText('');
+    setAmount('');
+    alert("Account Saved!")
   }
 
   const accounts = props.accounts.map((account) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import NewAccount from './screens/NewAccount';
 import HomeScreen from './screens/HomeScreen';
-import AllAccounts from './screens/AllAccounts'; 
+import AllAccounts from './screens/AllAccounts';
 import Icons from 'react-native-vector-icons/FontAwesome';
 import { TouchableOpacity, Text, View } from 'react-native';
 
@@ -31,11 +31,11 @@ export const NavigationTab = props => {
             <Tab.Screen
                 name="New Account"
                 component={NewAccount}
-            // options={{
-            //     tabBarIcon: ({ color, size }) => (
-            //         <Icons name="md-map" color={color} size={size} />
-            //     )
-            // }}
+                // options={{
+                //     tabBarIcon: () => (
+                //         <Icons name="plus" color="red" size="40" />
+                //     )
+                // }}
             />
         </Tab.Navigator>
     );
